@@ -10,7 +10,9 @@ FetchContent_Declare(
 )
 
 if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
-  set(Qt6_MOC_EXECUTABLE ${CMAKE_CURRENT_BINARY_DIR}/bin/moc)
+  find_package(X11 REQUIRED GLOBAL COMPONENTS)
+  set(QT_FEATURE_xcb ON)
+  set(Qt6_MOC_EXECUTABLE ${CMAKE_CURRENT_BINARY_DIR}/libexec/moc)
   set(Qt6_PLATFORM_PLUGIN Qt6::QXcbIntegrationPlugin)
 endif()
 if(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
