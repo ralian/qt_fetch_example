@@ -27,7 +27,8 @@ if(CMAKE_SYSTEM_NAME STREQUAL "Windows")
   set(Qt6_PLATFORM_PLUGIN Qt6::QWindowsIntegrationPlugin)
 endif()
 
-find_package(Qt6 REQUIRED COMPONENTS Gui GuiPrivate)
+find_package(Qt6 REQUIRED COMPONENTS Core Gui GuiPrivate)
 
 add_subdirectory(example_1)
 add_subdirectory(example_2)
+add_subdirectory(example_3)
